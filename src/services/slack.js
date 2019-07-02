@@ -48,7 +48,7 @@ function openDialog(triggerID, text) {
     }),
   }
 
-  return http.post(constants.API.DIALOG, qs.stringify(dialog));
+  return http.post(constants.API.DIALOG, dialog);
 }
 
 module.exports = {
