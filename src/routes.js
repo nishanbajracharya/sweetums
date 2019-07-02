@@ -1,8 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('/submit', (req, res) => {
-  res.send('');
+const slack = require('./services/slack');
+
+router.post('/hi', (req, res) => {
+  return slack.postMessage(req.body).then(() => {
+    res.send('');
+  }).catch(err => {
+    console.log(err);
+  });
 });
 
 module.exports = router;

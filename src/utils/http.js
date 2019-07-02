@@ -4,7 +4,7 @@ const qs = require('querystring');
 const constants = require('../constants');
 
 const instance = axios.create({
-  baseURL: constants.API_URL
+  baseURL: constants.BASE_API_URL
 });
 
 function get(url) {
