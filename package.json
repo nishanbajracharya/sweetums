@@ -1,0 +1,27 @@
+{
+  "name": "sweetums",
+  "version": "1.0.0",
+  "description": "Slack bot setup to submit forms from slack and save to google sheets.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishanbajracharya/sweetums.git"
+  },
+  "keywords": [
+    "slack",
+    "gapps"
+  ],
+  "author": "Nishan Bajracharya <nisbaj11@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nishanbajracharya/sweetums/issues"
+  },
+  "homepage": "https://github.com/nishanbajracharya/sweetums#readme",
+  "devDependencies": {
+    "dotenv": "^8.0.0"
+  }
+}
