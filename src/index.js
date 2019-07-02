@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
+const morgan = require('morgan');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -10,6 +11,8 @@ dotenv.config();
 const port = process.env.PORT || constants.PORT;
 
 const app = express();
+
+app.use(morgan('tiny'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
