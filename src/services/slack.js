@@ -55,9 +55,6 @@ function openDialog(triggerID, text) {
 
 function submitForm(body) {
   const payload = JSON.parse(body.payload);
-  console.log(payload);
-  console.log('Submitted By:', payload.user.name);
-  console.log('Channel:', payload.channel.id);
 
   const data = {
     channel: payload.channel.id,
@@ -66,10 +63,11 @@ function submitForm(body) {
   };
 
   const gappsURL = constants.GAPPS_URL + '?' +  qs.stringify({
-    username: payload.user.name
+    username: payload.user.name,
+    title: payload.submission.title,
+    urgency: payload.submission.urgency,
+    description: payload.submission.description,
   });
-
-  console.log(gappsURL);
 
   return http.axios.get(gappsURL).then(() => {
     return http.post(constants.API.CHAT, data);
