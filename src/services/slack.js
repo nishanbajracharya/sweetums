@@ -69,6 +69,8 @@ function submitForm(body) {
     description: payload.submission.description,
   });
 
+  console.log('GAPPS:', gappsURL);
+
   return http.axios.get(gappsURL).then(() => {
     return http.post(constants.API.CHAT, data);
   }).catch(err => {
