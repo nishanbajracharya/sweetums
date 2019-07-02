@@ -22,7 +22,7 @@ router.post('/open-dialog', (req, res) => {
 });
 
 router.post('/submit-form', (req, res) => {
-  console.log('BODY', req.body);
+  slack.submitForm(req.body);
 
   res.send('');
 });

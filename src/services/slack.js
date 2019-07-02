@@ -51,7 +51,21 @@ function openDialog(triggerID, text) {
   return http.post(constants.API.DIALOG, dialog);
 }
 
+function submitForm(body) {
+  console.log('Submitted By:', body.user.name);
+  console.log('Channel:', body.channel.id);
+
+  const data = {
+    channel: body.channel.id,
+    token: constants.SLACK_BOT_ACCESS_TOKEN,
+    text: `Hey ${body.user.name}, thanks for your response`,
+  };
+
+  return http.post(constants.API.CHAT, data);
+}
+
 module.exports = {
+  submitForm,
   openDialog,
   postMessage,
 };
