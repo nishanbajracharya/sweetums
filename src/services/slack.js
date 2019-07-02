@@ -1,3 +1,5 @@
+const qs = require('querystring');
+
 const http = require('../utils/http');
 const constants = require('../constants');
 
