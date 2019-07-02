@@ -52,13 +52,14 @@ function openDialog(triggerID, text) {
 }
 
 function submitForm(body) {
-  console.log('Submitted By:', body.user.name);
-  console.log('Channel:', body.channel.id);
+  const payload = JSON.parse(body.payload);
+  console.log('Submitted By:', payload.user.name);
+  console.log('Channel:', payload.channel.id);
 
   const data = {
-    channel: body.channel.id,
+    channel: payload.channel.id,
     token: constants.SLACK_BOT_ACCESS_TOKEN,
-    text: `Hey ${body.user.name}, thanks for your response`,
+    text: `Hey ${payload.user.name}, thanks for your response`,
   };
 
   return http.post(constants.API.CHAT, data);
