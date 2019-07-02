@@ -55,6 +55,7 @@ function openDialog(triggerID, text) {
 
 function submitForm(body) {
   const payload = JSON.parse(body.payload);
+  console.log(payload);
   console.log('Submitted By:', payload.user.name);
   console.log('Channel:', payload.channel.id);
 
