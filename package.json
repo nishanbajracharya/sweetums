@@ -23,5 +23,8 @@
   "homepage": "https://github.com/nishanbajracharya/sweetums#readme",
   "devDependencies": {
     "dotenv": "^8.0.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
