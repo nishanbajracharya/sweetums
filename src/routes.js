@@ -21,4 +21,10 @@ router.post('/open-dialog', (req, res) => {
   });
 });
 
+router.post('/submit-form', (req, res) => {
+  console.log('BODY', req.body);
+
+  res.send('');
+});
+
 module.exports = router;

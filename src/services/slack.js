@@ -17,8 +17,8 @@ function openDialog(triggerID, text) {
     token: constants.SLACK_BOT_ACCESS_TOKEN,
     trigger_id: triggerID,
     dialog: JSON.stringify({
-      title: 'Submit a helpdesk ticket',
-      callback_id: 'submit-ticket',
+      title: 'Fill the following form',
+      callback_id: 'submit-form',
       submit_label: 'Submit',
       elements: [
         {
@@ -26,7 +26,7 @@ function openDialog(triggerID, text) {
           type: 'text',
           name: 'title',
           value: text,
-          hint: '30 second summary of the problem',
+          hint: 'What do you want to do?',
         },
         {
           label: 'Description',
