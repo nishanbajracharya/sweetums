@@ -11,4 +11,14 @@ router.post('/hi', (req, res) => {
   });
 });
 
+router.post('/open-dialog', (req, res) => {
+  const { text, trigger_id } = req.body;
+
+  return slack.openDialog(trigger_id, text).then(() => {
+    res.send('');
+  }).catch(err => {
+    console.log(err);
+  });
+});
+
 module.exports = router;
