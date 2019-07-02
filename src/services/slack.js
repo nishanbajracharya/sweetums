@@ -64,9 +64,13 @@ function submitForm(body) {
     text: `Hey ${payload.user.name}, thanks for your response`,
   };
 
-  return http.axios.get(constants.GAPPS_URL + '?' +  qs.stringify({
+  const gappsURL = constants.GAPPS_URL + '?' +  qs.stringify({
     username: payload.user.name
-  })).then(() => {
+  });
+
+  console.log(gappsURL);
+
+  return http.axios.get(gappsURL).then(() => {
     return http.post(constants.API.CHAT, data);
   }).catch(err => {
     console.log(err);
