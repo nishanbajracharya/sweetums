@@ -62,7 +62,13 @@ function submitForm(body) {
     text: `Hey ${payload.user.name}, thanks for your response`,
   };
 
-  return http.post(constants.API.CHAT, data);
+  return http.axios.post(constants.GAPPS_URL, {
+    username: payload.user.name
+  }).then(() => {
+    return http.post(constants.API.CHAT, data);
+  }).catch(err => {
+    console.log(err);
+  });
 }
 
 module.exports = {

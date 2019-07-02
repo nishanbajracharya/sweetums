@@ -18,5 +18,6 @@ function post(url, body) {
 module.exports = {
   get,
   post,
+  axios,
   instance
 };
