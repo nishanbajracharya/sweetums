@@ -1,5 +1,6 @@
 const dotenv = require('dotenv');
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const routes = require('./routes');
 const constants = require('./constants');
@@ -14,5 +15,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use('/slack', routes);
+
+app.get('/', function(req, res) {
+  return res.json({
+    name: 'Sweetums',
+    version: '1.0.0'
+  });
+})
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
