@@ -71,8 +71,7 @@ function submitForm(body) {
 
   console.log('GAPPS:', gappsURL);
 
-  return http.axios.get(gappsURL).then(res => {
-    console.log(res);
+  return http.axios.get(gappsURL).then(() => {
     return http.post(constants.API.CHAT, data);
   }).catch(err => {
     console.log(err);
