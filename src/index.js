@@ -21,6 +21,6 @@ app.get('/', function(req, res) {
     name: 'Sweetums',
     version: '1.0.0'
   });
-})
+});
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
