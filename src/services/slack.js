@@ -24,11 +24,11 @@ function openDialog(triggerID, text) {
       submit_label: 'Submit',
       elements: [
         {
-          label: 'Title',
+          label: 'Title of Achievement',
           type: 'text',
           name: 'title',
           value: text,
-          hint: 'What do you want to do?',
+          hint: 'What did you achieve?',
         },
         {
           label: 'Description',
@@ -37,13 +37,17 @@ function openDialog(triggerID, text) {
           optional: true,
         },
         {
-          label: 'Urgency',
+          label: 'Select a trait that matches your achievement',
           type: 'select',
-          name: 'urgency',
+          name: 'trait',
           options: [
-            { label: 'Low', value: 'Low' },
-            { label: 'Medium', value: 'Medium' },
-            { label: 'High', value: 'High' },
+            { label: 'Technical Expertise', value: 'Technical Expertise' },
+            { label: 'Entrepreneurial Mindset', value: 'Entrepreneurial Mindset' },
+            { label: 'Communication', value: 'Communication' },
+            { label: 'Team Player', value: 'Team Player' },
+            { label: 'Ownership', value: 'Ownership' },
+            { label: 'Learning', value: 'Learning' },
+            { label: 'Community Champion', value: 'Community Champion' },
           ],
         },
       ],
@@ -65,7 +69,7 @@ function submitForm(body) {
   const gappsURL = constants.GAPPS_URL + '?' +  qs.stringify({
     username: payload.user.name,
     title: payload.submission.title,
-    urgency: payload.submission.urgency,
+    trait: payload.submission.trait,
     description: payload.submission.description,
   });
 
